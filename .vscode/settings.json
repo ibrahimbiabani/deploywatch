@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "C:/Users/mkhan/AppData/Local/Programs/Python/Python311/python.exe",
+    "python.analysis.extraPaths": ["C:/Users/mkhan/projects/shared-libs"],
+    "python.testing.pytestEnabled": true,
+    "editor.formatOnSave": true
+}
