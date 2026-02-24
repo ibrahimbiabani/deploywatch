@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deploywatch"
+version = "0.3.0"
+description = "Track deployments across environments and notify the team."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "flask>=3.0",
+    "requests>=2.31",
+    "pyyaml>=6.0",
+]
+
+[tool.setuptools]
+packages = ["deploywatch"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
