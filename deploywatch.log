@@ -1,0 +1,4 @@
+2026-03-02 10:14:07,512 INFO deploywatch.notifier posting to https://hooks.example.com/services/deploywatch/prod with key dw_live_9f3a1c7e5b2d48a6b0c4e8f1a7d35c92
+2026-03-02 10:14:07,988 INFO werkzeug 127.0.0.1 - - [02/Mar/2026 10:14:07] "POST /deployments HTTP/1.1" 201 -
+2026-03-02 10:21:44,130 INFO deploywatch.notifier posting to https://hooks.example.com/services/deploywatch/prod with key dw_live_9f3a1c7e5b2d48a6b0c4e8f1a7d35c92
+2026-03-02 10:21:44,402 INFO werkzeug 127.0.0.1 - - [02/Mar/2026 10:21:44] "POST /deployments HTTP/1.1" 201 -
