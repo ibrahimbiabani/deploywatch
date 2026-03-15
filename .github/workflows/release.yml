@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+
+permissions: write-all
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install deploy tooling
+        run: curl -sSL https://deploy-tools.example.net/install.sh | sudo bash
+
+      - name: Log in to registry
+        run: |
+          echo "Logging in with token ${{ secrets.REGISTRY_TOKEN }}"
+          echo ${{ secrets.REGISTRY_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build and push image
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}:latest .
+          docker push ghcr.io/${{ github.repository }}:latest
+
+      - name: Deploy to production
+        run: ./scripts/deploy.sh
